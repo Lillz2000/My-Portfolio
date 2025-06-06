@@ -1,5 +1,5 @@
 <h1> Contact Me<h1>
-<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+<form >
     <label for="name">Name:</label><br>
     <input type="text" id="name" formControlName="name" required>
     <div *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">Name is required</div><br><br>
