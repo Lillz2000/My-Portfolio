@@ -2,13 +2,11 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 interface Project {
-  id: number;
+  id: string;
   title: string;
   description: string;
-  image: string;
   technologies: string[];
-  liveLink?: string;
-  githubLink?: string;
+  githubLink: string;
 }
 
 @Component({
@@ -21,44 +19,29 @@ interface Project {
 export class ProjectsComponent {
   projects: Project[] = [
     {
-      id: 1,
-      title: 'Portfolio Website',
-      description: 'A modern, responsive portfolio website built with Angular and TypeScript. Features a clean design, smooth animations, and a contact form.',
-      image: 'assets/images/portfolio.jpg',
-      technologies: ['Angular', 'TypeScript', 'HTML5', 'CSS3'],
-      liveLink: '#',
-      githubLink: '#'
+      id: 'portfolio',
+      title: 'Personal Portfolio Website',
+      description: 'A modern portfolio website built with Angular and TypeScript, showcasing my skills and projects. Features a responsive design, smooth animations, and a clean user interface.',
+      technologies: ['Angular', 'TypeScript', 'HTML5', 'CSS3', 'Git'],
+      githubLink: 'https://github.com/Lillz2000/My-Portfolio'
     },
     {
-      id: 2,
-      title: 'E-commerce Platform',
-      description: 'A full-stack e-commerce application with user authentication, product management, shopping cart, and payment integration.',
-      image: 'assets/images/ecommerce.jpg',
-      technologies: ['Angular', 'Node.js', 'Firebase', 'Stripe'],
-      liveLink: '#',
-      githubLink: '#'
-    },
-    {
-      id: 3,
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates, task assignments, and progress tracking.',
-      image: 'assets/images/taskmanager.jpg',
-      technologies: ['React', 'Firebase', 'Material-UI', 'Redux'],
-      liveLink: '#',
-      githubLink: '#'
-    },
-    {
-      id: 4,
-      title: 'Weather Dashboard',
-      description: 'A weather dashboard that displays current weather conditions and forecasts using the OpenWeatherMap API.',
-      image: 'assets/images/weather.jpg',
-      technologies: ['JavaScript', 'HTML5', 'CSS3', 'Weather API'],
-      liveLink: '#',
-      githubLink: '#'
+      id: 'infs',
+      title: 'INFS-202 Project 2023',
+      description: 'A collaborative university project focused on information systems. Contributed to developing a database management system, implementing data models, and creating user interfaces.',
+      technologies: ['Database Management', 'SQL', 'System Analysis', 'Team Collaboration'],
+      githubLink: 'https://github.com/Onkgopotse007/INFS-202-Project-2023'
     }
   ];
 
-  getImageUrl(imagePath: string): string {
-    return imagePath || 'assets/images/default-project.jpg';
+  getProjectIcon(projectId: string): string {
+    switch (projectId) {
+      case 'portfolio':
+        return 'fas fa-laptop-code fa-3x';
+      case 'infs':
+        return 'fas fa-database fa-3x';
+      default:
+        return 'fas fa-code fa-3x';
+    }
   }
 } 

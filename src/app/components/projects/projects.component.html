@@ -1,26 +1,25 @@
 <section class="projects">
   <div class="container">
     <h1>My Projects</h1>
-    <p class="subtitle">Here are some of the projects I've worked on</p>
+    <p class="subtitle">Showcasing my work in web development, data analysis and database management. 
+      The projects below are some of which I have done as part of my university modules i.e the INFS-202 Project 2023, and the other as part of 
+      my internship projects i.e the Personal Portfolio Website.</p>
 
     <div class="projects-grid">
       <div *ngFor="let project of projects" class="project-card">
-        <div class="project-image">
-          <img [src]="getImageUrl(project.image)" [alt]="project.title">
-          <div class="project-overlay">
-            <a *ngIf="project.liveLink" [href]="project.liveLink" class="project-link" target="_blank" rel="noopener noreferrer">
-              <i class="fas fa-external-link-alt"></i>
-            </a>
-            <a *ngIf="project.githubLink" [href]="project.githubLink" class="project-github" target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-github"></i>
-            </a>
-          </div>
+        <div class="project-icon">
+          <i [class]="getProjectIcon(project.id)"></i>
         </div>
         <div class="project-content">
           <h3>{{ project.title }}</h3>
           <p class="project-description">{{ project.description }}</p>
           <div class="project-tech">
-            <span *ngFor="let tech of project.technologies">{{ tech }}</span>
+            <span *ngFor="let tech of project.technologies" class="tech-tag">{{ tech }}</span>
+          </div>
+          <div class="project-links">
+            <a [href]="project.githubLink" class="github-link" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-github"></i> View on GitHub
+            </a>
           </div>
         </div>
       </div>

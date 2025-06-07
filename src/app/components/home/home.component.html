@@ -2,24 +2,23 @@
   <div class="hero">
     <div class="container">
       <div class="hero-content">
-        <h1>Hi, I'm {{ name }}</h1>
-        <h2>{{ title }}</h2>
+        <h1>Hi, I'm Refilwe Lilly Ntlhaakgosi</h1>
+        <h2>Data Analyst</h2>
         <p class="hero-description">
-          I build modern, responsive web applications with a focus on user experience and clean code.
-          Passionate about creating solutions that make a difference.
+          I work with raw data, transforming it into meaningful insights. Insights are used for problem solving and decision making.
         </p>
         <div class="hero-buttons">
-          <button (click)="scrollToSection('projects')" class="btn btn-primary">View My Work</button>
-          <button (click)="scrollToSection('contact')" class="btn btn-secondary">Get in Touch</button>
+          <a routerLink="/projects" class="btn btn-primary">View My Work</a>
+          <a routerLink="/contact" class="btn btn-secondary">Get in Touch</a>
         </div>
         <div class="hero-social">
-          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="social-link">
+          <a href="https://github.com/Lillz2000" target="_blank" rel="noopener noreferrer" class="social-link">
             <i class="fab fa-github"></i>
           </a>
-          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" class="social-link">
+          <a href="https://linkedin.com/in/Refilwe Ntlhaakgosi" target="_blank" rel="noopener noreferrer" class="social-link">
             <i class="fab fa-linkedin"></i>
           </a>
-          <a href="mailto:your.email@example.com" class="social-link">
+          <a href="mailto:lillyntlhaakgosi123@gmail.com" class="social-link">
             <i class="fas fa-envelope"></i>
           </a>
         </div>
@@ -27,33 +26,38 @@
     </div>
   </div>
 
-  <div class="features">
+  <section class="features">
     <div class="container">
       <div class="features-grid">
         <div class="feature-card">
-          <i class="fas fa-code"></i>
-          <h3>Clean Code</h3>
-          <p>Writing maintainable and efficient code that follows best practices and design patterns.</p>
+          <i class="fas fa-chart-line"></i>
+          <h3>Data Visualization</h3>
+          <p>Transforming complex datasets into clear, compelling visuals for better insights.</p>
         </div>
         <div class="feature-card">
-          <i class="fas fa-mobile-alt"></i>
-          <h3>Responsive Design</h3>
-          <p>Creating beautiful and functional interfaces that work seamlessly across all devices.</p>
+          <i class="fas fa-database"></i>
+          <h3>Data Management</h3>
+          <p>Organizing, cleaning, and optimizing data for efficient analysis and decision-making.</p>
         </div>
         <div class="feature-card">
-          <i class="fas fa-rocket"></i>
-          <h3>Performance</h3>
-          <p>Optimizing applications for speed and efficiency to provide the best user experience.</p>
+          <i class="fas fa-brain"></i>
+          <h3>Predictive Analytics</h3>
+          <p>Leveraging statistical models and machine learning to forecast trends and patterns.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-chart-bar"></i>
+          <h3>Business Intelligence</h3>
+          <p>Creating actionable insights from data to drive strategic business decisions.</p>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="cta">
+  <section class="cta">
     <div class="container">
-      <h2>Let's Work Together</h2>
-      <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
-      <button (click)="scrollToSection('contact')" class="btn btn-primary">Get in Touch</button>
+      <h2>Ready to Transform Your Data?</h2>
+      <p>Let's work together to turn your data into valuable insights that drive growth and innovation.</p>
+      <a routerLink="/contact" class="btn btn-primary">Get in Touch</a>
     </div>
-  </div>
+  </section>
 </section> 
