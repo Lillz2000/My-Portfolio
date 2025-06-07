@@ -1,0 +1,147 @@
+.skills {
+  padding: 4rem 2rem;
+  background-color: var(--section-bg);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skills h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--text-color);
+  margin-bottom: 3rem;
+}
+
+.skills-content {
+  display: grid;
+  gap: 3rem;
+}
+
+/* Skills Categories */
+.skills-category {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.skills-category h2 {
+  color: var(--text-color);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skills-category h2 i {
+  color: var(--primary-color);
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skill-info span {
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.skill-info .level {
+  color: var(--primary-color);
+  font-size: 0.9rem;
+}
+
+.skill-bar {
+  height: 8px;
+  background: var(--section-bg);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skill-progress {
+  height: 100%;
+  background: var(--primary-color);
+  border-radius: 4px;
+  transition: width 1s ease-in-out;
+}
+
+/* Soft Skills Grid */
+.soft-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.soft-skill-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--section-bg);
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.soft-skill-item:hover {
+  transform: translateY(-5px);
+}
+
+.soft-skill-item i {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.soft-skill-item span {
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+/* Animation for skill bars */
+@keyframes fillBar {
+  from {
+    width: 0;
+  }
+}
+
+.skill-progress {
+  animation: fillBar 1s ease-in-out forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .skills {
+    padding: 2rem 1rem;
+  }
+
+  .skills-category {
+    padding: 1.5rem;
+  }
+
+  .soft-skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .soft-skills-grid {
+    grid-template-columns: 1fr;
+  }
+} 

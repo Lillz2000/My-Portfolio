@@ -1,8 +1,56 @@
-<nav>
-    <a routerlink="/">Home</a> |
-    <a routerlink="/about">About</a> |
-    <a routerlink="/skills">Skills</a> |
-    <a routerlink="/projects">Projects</a> |
-    <a routerlink="/contact">Contact</a>S
+<nav class="navbar">
+  <div class="container">
+    <a href="#" class="logo">RLN</a>
+    <div class="nav-links" [class.active]="isMenuOpen">
+      <a (click)="scrollToSection('home')" class="nav-link" [class.active]="activeSection === 'home'">Home</a>
+      <a (click)="scrollToSection('about')" class="nav-link" [class.active]="activeSection === 'about'">About</a>
+      <a (click)="scrollToSection('skills')" class="nav-link" [class.active]="activeSection === 'skills'">Skills</a>
+      <a (click)="scrollToSection('projects')" class="nav-link" [class.active]="activeSection === 'projects'">Projects</a>
+      <a (click)="scrollToSection('contact')" class="nav-link" [class.active]="activeSection === 'contact'">Contact</a>
+    </div>
+    <button class="menu-toggle" (click)="toggleMenu()" [class.active]="isMenuOpen" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
 </nav>
-<router-outlet></router-outlet>
+
+<main>
+  <section id="home">
+    <app-home></app-home>
+  </section>
+  
+  <section id="about">
+    <app-about></app-about>
+  </section>
+  
+  <section id="skills">
+    <app-skills></app-skills>
+  </section>
+  
+  <section id="projects">
+    <app-projects></app-projects>
+  </section>
+  
+  <section id="contact">
+    <app-contact></app-contact>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2024 Refilwe Lilly Ntlhaakgosi. All rights reserved.</p>
+    <div class="footer-social">
+      <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="mailto:your.email@example.com" class="social-link" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+  </div>
+</footer>

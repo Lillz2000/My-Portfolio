@@ -7,7 +7,7 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.css'
+  styleUrls: ['./contact.component.css']
 })
 export class ContactComponent {
   contactForm: FormGroup;
@@ -23,9 +23,9 @@ export class ContactComponent {
 
   onSubmit(): void {
     if (this.contactForm.valid) {
-      console.log('Form Data:', this.contactForm.value);
+      console.log('Form submitted:', this.contactForm.value);
       // Here you would typically send the form data to a backend service
-      alert('Message sent! Thank you for contacting me.');
+      alert('Thank you for your message! I will get back to you soon.');
       this.contactForm.reset();
     } else {
       // Mark all fields as touched to trigger validation messages
@@ -35,4 +35,10 @@ export class ContactComponent {
       });
     }
   }
-}
+
+  // Helper methods for form validation
+  get name() { return this.contactForm.get('name'); }
+  get email() { return this.contactForm.get('email'); }
+  get subject() { return this.contactForm.get('subject'); }
+  get message() { return this.contactForm.get('message'); }
+} 

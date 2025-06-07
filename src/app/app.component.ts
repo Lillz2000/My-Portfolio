@@ -1,19 +1,46 @@
-import { Component } from '@angular/core';
-import { Firestore, collection, getDocs } from '@angular/fire/firestore';
+import { Component, HostListener, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { HomeComponent } from './components/home/home.component';
+import { AboutComponent } from './components/about/about.component';
+import { SkillsComponent } from './components/skills/skills.component';
+import { ProjectsComponent } from './components/projects/projects.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { ScrollService } from './services/scroll.service';
 
 @Component({
     selector: 'app-root',
-    template: '<h1>Firebase Test</h1>',
-    styleUrls: ['./app.css']
+    standalone: true,
+    imports: [
+        CommonModule,
+        HomeComponent,
+        AboutComponent,
+        SkillsComponent,
+        ProjectsComponent,
+        ContactComponent
+    ],
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css'],
+    providers: [AppComponent]
 })
-export class AppComponenet {
-    constructor(private firestore: Firestore) {
-        this.testFirestore();
+export class AppComponent {
+    private scrollService = inject(ScrollService);
+    isMenuOpen: boolean = false;
+
+    get activeSection(): string {
+        return this.scrollService.getActiveSection();
     }
 
-    async testFirestore() {
-        const collectionRef = collection(this.firestore, 'testCollection');
-        const snapshot = await getDocs(collectionRef);
-        console.log('Firebase Connected:', snapshot.docs.map(doc => doc.data()));
+    @HostListener('window:scroll')
+    onScroll(): void {
+        this.scrollService.updateActiveSection();
+    }
+
+    scrollToSection(sectionId: string): void {
+        this.scrollService.scrollToSection(sectionId);
+        this.isMenuOpen = false;
+    }
+
+    toggleMenu(): void {
+        this.isMenuOpen = !this.isMenuOpen;
     }
 }
